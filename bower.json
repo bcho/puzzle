@@ -1,0 +1,25 @@
+{
+  "name": "puzzle",
+  "version": "0.0.1",
+  "authors": [
+    "hbc <bcxxxxxx@gmail.com>"
+  ],
+  "description": "Puzzzzzzzle!",
+  "moduleType": [
+    "es6",
+    "globals"
+  ],
+  "keywords": [
+    "game",
+    "canvas",
+    "AI"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
