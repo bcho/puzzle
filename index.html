@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzzzzzle!</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .guide {
+            width: 20%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide">
+        <image src="/images/default.png" style="width: 100%;"></image>
+        <p>hint: use your arrow keys to move! and press r to restart the game!</p>
+        <p>press 2, 3, 4, 5 to choose level!</p>
+        <h3 class="status"></h3>
+    </div>
+    <div class="game-board">
+        <div class="puzzle-board">
+            <canvas class="puzzle-drawing"></canvas>
+        </div>
+    </div>
+</body>
+<script src="http://cdn.craig.is/js/mousetrap/mousetrap.min.js?9d308"></script>
+<script src="app.js"></script>
+<script>
+    (function () {
+        var status = document.querySelector('.status');
+
+        function checkState() {
+            if (isFinish()) {
+                status.innerHTML = 'you win!';
+            } else {
+                status.innerHTML = '';
+            }
+        }
+
+        startGame({
+            el: '.puzzle-drawing',
+            image: '/images/default.png',
+            n: 2
+        });
+
+        Mousetrap.bind('up', function() {
+            move(DIRECTION.UP);
+            checkState();
+        });
+        
+        Mousetrap.bind('down', function () {
+            move(DIRECTION.DOWN);
+            checkState();
+        });
+        
+        Mousetrap.bind('left', function () {
+            move(DIRECTION.LEFT);
+            checkState();
+        });
+        
+        Mousetrap.bind('right', function () {
+            move(DIRECTION.RIGHT);
+            checkState();
+        });
+
+        Mousetrap.bind('r', function () {
+            restartGame();
+        });
+        
+        Mousetrap.bind('2', function () {
+            startGame({
+                el: '.puzzle-drawing',
+                image: '/images/default.png',
+                n: 2
+            });
+        });
+        
+        Mousetrap.bind('3', function () {
+            startGame({
+                el: '.puzzle-drawing',
+                image: '/images/default.png',
+                n: 3
+            });
+        });
+
+        Mousetrap.bind('4', function () {
+            startGame({
+                el: '.puzzle-drawing',
+                image: '/images/default.png',
+                n: 4
+            });
+        });
+
+        Mousetrap.bind('5', function () {
+            startGame({
+                el: '.puzzle-drawing',
+                image: '/images/default.png',
+                n: 5
+            });
+        });
+    })(); 
+</script>
+</html>
